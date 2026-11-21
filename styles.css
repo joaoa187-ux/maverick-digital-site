@@ -32,7 +32,8 @@ img, svg { max-width: 100%; }
   .orbit-b { width: min(92vw, 390px); height: min(72vw, 300px); }
   .card-google { left: 0; top: 4px; max-width: 48%; padding: 11px 12px; }
   .card-site { right: 0; bottom: 32px; max-width: 49%; padding: 11px 12px; }
-  .growth-bars { left: 18%; bottom: 0; }
+  .growth-bars { left: 18%; bottom: -24px; }
+  .card-site { right: 0; bottom: 54px; }
   .growth-arrow { right: 10%; top: 12%; font-size: 42px; }
   .section, .method-section, .contact-section { max-width: 100%; }
   .section-heading { min-width: 0; }
