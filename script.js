@@ -40,3 +40,45 @@ if (year) year.textContent = new Date().getFullYear();
  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('is-visible',entry.isIntersecting)),{threshold:.15});
  scenes.forEach(scene=>observer.observe(scene));
 })();
+
+
+/* Microinteração por toque nas duas logos oficiais — mantém a rolagem vertical */
+(() => {
+ const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const coarsePointer=window.matchMedia('(pointer: coarse)');
+ if(reduceMotion.matches||!coarsePointer.matches)return;
+ const scenes=[
+  {element:document.querySelector('.hero-art'),logo:'.hero-logo'},
+  {element:document.querySelector('.about-visual'),logo:'.about-logo'}
+ ].map(scene=>({...scene,target:scene.element?.querySelector(scene.logo)})).filter(scene=>scene.element&&scene.target);
+ let active=null;
+ const reset=()=>{
+  if(!active)return;
+  active.target.style.setProperty('--touch-x','0px');
+  active.target.style.setProperty('--touch-y','0px');
+  active.element.classList.remove('is-touch-active');
+  active=null;
+ };
+ scenes.forEach(scene=>{
+  scene.element.addEventListener('pointerdown',event=>{
+   if(event.pointerType!=='touch'||reduceMotion.matches)return;
+   reset();
+   active=scene;
+   scene.element.classList.add('is-touch-active');
+   scene.target.style.setProperty('--touch-x','0px');
+   scene.target.style.setProperty('--touch-y','0px');
+  },{passive:true});
+  scene.element.addEventListener('pointermove',event=>{
+   if(event.pointerType!=='touch'||active!==scene||reduceMotion.matches)return;
+   const bounds=scene.element.getBoundingClientRect();
+   if(!bounds.width||!bounds.height)return;
+   const x=Math.max(-.5,Math.min(.5,(event.clientX-bounds.left)/bounds.width-.5));
+   const y=Math.max(-.5,Math.min(.5,(event.clientY-bounds.top)/bounds.height-.5));
+   scene.target.style.setProperty('--touch-x',(-x*12).toFixed(2)+'px');
+   scene.target.style.setProperty('--touch-y',(-y*10).toFixed(2)+'px');
+  },{passive:true});
+ });
+ window.addEventListener('pointerup',event=>{if(event.pointerType==='touch')reset();},{passive:true});
+ window.addEventListener('pointercancel',reset,{passive:true});
+ window.addEventListener('blur',reset);
+})();

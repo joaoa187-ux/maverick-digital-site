@@ -103,3 +103,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
     .hero-art.is-visible .orbit-b{animation:mk-drift-b 20s ease-in-out infinite}
   }
 }
+
+
+/* Resposta direcional ao toque nas logos — deslocamento curto e retorno suave */
+@media (hover:none) and (pointer:coarse) and (prefers-reduced-motion:no-preference) {
+  .hero-art,.about-visual { touch-action: pan-y; }
+  .hero-logo,.about-logo {
+    translate: var(--touch-x,0px) var(--touch-y,0px) !important;
+    transition: translate .18s cubic-bezier(.22,1,.36,1), filter .3s ease !important;
+    will-change: translate;
+  }
+  .hero-art.is-touch-active .hero-logo,
+  .about-visual.is-touch-active .about-logo {
+    filter: drop-shadow(0 14px 28px rgba(0,150,255,.32));
+  }
+}
