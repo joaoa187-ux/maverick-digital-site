@@ -31,3 +31,12 @@ if (year) year.textContent = new Date().getFullYear();
   element.addEventListener('pointerleave',()=>{bounds=null;reset();});
  });
 })();
+
+/* Marca as cenas visíveis na tela para que o movimento ambiente (CSS) só rode quando necessário */
+(() => {
+ const scenes=document.querySelectorAll('.hero-art,.about-visual');
+ if(!scenes.length)return;
+ if(!('IntersectionObserver' in window)){scenes.forEach(scene=>scene.classList.add('is-visible'));return;}
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('is-visible',entry.isIntersecting)),{threshold:.15});
+ scenes.forEach(scene=>observer.observe(scene));
+})();

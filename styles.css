@@ -19,22 +19,36 @@ img, svg { max-width: 100%; }
   .card-google { left: 0; }
   .card-site { right: 0; }
 }
+@media (min-width: 681px) and (max-width: 900px) {
+  /* Tablet: barras decorativas mais estreitas e cartão "Seu site" mais baixo, sem tocar a logo nem as barras */
+  .growth-bars { left: 6%; gap: 5px; }
+  .growth-bars i { width: 12px; }
+  .card-site { bottom: 46px; }
+}
 @media (max-width: 680px) {
   html { scroll-padding-top: 76px; }
   .section-wrap { width: calc(100% - 40px); max-width: 520px; }
   .site-header { width: 100%; max-width: 100%; }
-  .hero { width: 100%; max-width: 100%; padding-top: 48px; padding-bottom: 34px; gap: 12px; }
+  /* Sem width:100% aqui: a hero mantém as mesmas margens laterais das demais seções */
+  .hero { padding-top: 48px; padding-bottom: 34px; gap: 12px; }
   .hero-copy, .hero-lead, .hero-actions { min-width: 0; max-width: 100%; }
-  .hero h1 { font-size: clamp(38px, 10.5vw, 46px); overflow-wrap: normal; }
-  .hero-art { width: 100%; max-width: 440px; height: clamp(300px, 88vw, 360px); margin: 0 auto; transform: none; transform-origin: center; overflow: visible; }
-  .hero-logo { width: clamp(170px, 48vw, 220px); max-width: 58%; }
+  .hero h1 { font-size: clamp(38px, 10.5vw, 46px); overflow-wrap: normal; text-wrap: balance; }
+
+  /* Ilustração da hero em fluxo: cartão Google, logo e cartão "Seu site" ocupam faixas
+     próprias. A altura nasce do conteúdo, então nada se sobrepõe em nenhuma largura. */
+  .hero-art { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 20px; align-content: start; place-items: stretch;
+              width: 100%; max-width: 440px; height: auto; margin: 0 auto; transform: none; overflow: visible; }
+  .hero-art .card-google, .hero-art .card-site { position: relative; inset: auto; width: max-content; max-width: 100%; padding: 11px 12px; }
+  .hero-art .card-google { grid-column: 1; grid-row: 1; justify-self: start; }
+  .hero-art .hero-logo { grid-column: 1; grid-row: 2; justify-self: center; width: clamp(150px, 50vw, 210px); max-width: none; }
+  .hero-art .card-site { grid-column: 1; grid-row: 3; justify-self: end; }
+  .hero-art .growth-bars { left: 2%; bottom: 0; width: min(34%, 128px); height: 84px; gap: clamp(3px, 1.2vw, 6px); }
+  .hero-art .growth-bars i { flex: 1; width: auto; min-width: 0; }
+  .hero-art .growth-arrow { position: relative; inset: auto; grid-column: 1; grid-row: 2; justify-self: end; align-self: start; font-size: 42px; line-height: 1; margin-right: 2%; }
+  .hero-art .orbit, .hero-art .art-glow { justify-self: center; align-self: center; }
   .orbit-a { width: min(78vw, 330px); height: min(58vw, 245px); }
   .orbit-b { width: min(92vw, 390px); height: min(72vw, 300px); }
-  .card-google { left: 0; top: 4px; max-width: 48%; padding: 11px 12px; }
-  .card-site { right: 0; bottom: 32px; max-width: 49%; padding: 11px 12px; }
-  .growth-bars { left: 18%; bottom: -24px; }
-  .card-site { right: 0; bottom: 54px; }
-  .growth-arrow { right: 10%; top: 12%; font-size: 42px; }
+
   .section, .method-section, .contact-section { max-width: 100%; }
   .section-heading { min-width: 0; }
   .service-grid { min-width: 0; }
@@ -45,12 +59,14 @@ img, svg { max-width: 100%; }
   .contact-panel { min-width: 0; padding: clamp(22px, 6vw, 30px); }
   .footer-inner { min-width: 0; }
   .ticker { max-width: 100%; overflow: hidden; }
+  .menu-toggle { padding: 14px 11px; }   /* área de toque de 44 x 44 px */
+}
+@media (max-width: 900px), (pointer: coarse) {
+  .text-link, .card-link { display: inline-flex; align-items: center; min-height: 44px; }
 }
 @media (max-width: 380px) {
   .section-wrap { width: calc(100% - 32px); }
   .hero h1 { font-size: 37px; }
-  .hero-art { height: 290px; }
-  .card-google, .card-site { transform: scale(.9); }
 }
 
 
@@ -64,3 +80,26 @@ img, svg { max-width: 100%; }
 .about-visual::after{content:"";position:absolute;width:72%;aspect-ratio:1;border:1px solid rgba(0,216,233,.22);border-radius:50%;pointer-events:none;translate:var(--motion-x) var(--motion-y);transition:translate .35s cubic-bezier(.22,1,.36,1)}
 @media(hover:hover) and (pointer:fine) and (min-width:681px){.hero-art.is-interactive .hero-logo{scale:1.018}.about-visual.is-interactive .about-logo{scale:1.025}}
 @media(max-width:680px),(prefers-reduced-motion:reduce){.hero-art::before,.about-visual::before{display:none}.hero-logo,.about-logo,.hero-art .card-google,.hero-art .card-site,.hero-art .growth-bars,.hero-art .growth-arrow,.about-visual::after{translate:none!important;transition:none!important}}
+
+/* Contenção de largura: elementos decorativos nunca ampliam o documento (evita o zoom-out e a faixa vazia no celular) */
+body{position:relative}
+.ambient-layer{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+main{overflow-x:hidden;overflow-x:clip}
+
+/* Foco visível para navegação por teclado */
+a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+
+/* Movimento ambiente para telas de toque (a interação por ponteiro continua só no desktop).
+   Só roda com a cena visível e nunca com movimento reduzido. Anima apenas transform/rotate. */
+@keyframes mk-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes mk-float-diag{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,-6px)}}
+@keyframes mk-drift-a{0%,100%{rotate:0deg}50%{rotate:4deg}}
+@keyframes mk-drift-b{0%,100%{rotate:0deg}50%{rotate:-4deg}}
+@media (hover:none),(max-width:680px){
+  @media (prefers-reduced-motion:no-preference){
+    .hero-art.is-visible .hero-logo,.about-visual.is-visible .about-logo{animation:mk-float 7s ease-in-out infinite}
+    .hero-art.is-visible .growth-arrow{animation:mk-float-diag 5s ease-in-out infinite}
+    .hero-art.is-visible .orbit-a{animation:mk-drift-a 16s ease-in-out infinite}
+    .hero-art.is-visible .orbit-b{animation:mk-drift-b 20s ease-in-out infinite}
+  }
+}
