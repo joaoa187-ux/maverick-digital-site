@@ -103,3 +103,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
     .hero-art.is-visible .orbit-b{animation:mk-drift-b 20s ease-in-out infinite}
   }
 }
+
+/* Acabamento institucional e páginas legais */
+.footer-inner{grid-template-columns:auto minmax(180px,1fr) auto}
+.footer-contact{display:flex;flex-direction:column;align-items:flex-end;gap:7px;font-size:10px;color:#9eb2cc}
+.footer-contact a,.contact-email{color:#b8d8f2;text-decoration:underline;text-decoration-color:#168bff66;text-underline-offset:3px}
+.footer-contact a:hover,.contact-email:hover{color:var(--cyan)}
+.contact-email{display:inline-block;margin-top:9px;font-size:11px}
+.legal-page{padding-top:90px;padding-bottom:100px;max-width:900px}
+.legal-page h1{font-size:clamp(40px,5vw,58px);margin:22px 0 14px}
+.legal-page h2{font:700 20px var(--display);letter-spacing:-.02em;margin:34px 0 10px;color:#e8f3ff}
+.legal-page p{font-size:14px;line-height:1.9;color:#aebfd5}
+.legal-page a:not(.button){color:#71dce9;text-decoration:underline;text-underline-offset:3px}
+.legal-updated{font-size:11px!important;color:#7893b5!important;margin-bottom:32px}
+.legal-note{margin-top:35px;padding:18px 20px;border-left:2px solid var(--cyan);background:#0a1d39;color:#c1d4e9!important}
+@media(max-width:680px){.footer-inner{grid-template-columns:1fr;gap:15px}.footer-contact{align-items:flex-start}.legal-page{padding-top:62px;padding-bottom:75px}.legal-page h2{font-size:18px}}
