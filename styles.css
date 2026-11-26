@@ -123,3 +123,25 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .channel-update strong{display:block;color:#dff8ff;font:700 12px var(--display);margin-bottom:6px}
 .channel-update p{font-size:11px;line-height:1.7;color:#9fb6d0;margin:0 0 7px}
 .channel-update a{font-size:11px;color:#71dce9;text-decoration:underline;text-underline-offset:3px}
+
+
+/* Conteúdo comercial complementar: diferenciais, FAQ e navegação institucional */
+.differentiators-section{padding-top:34px;padding-bottom:88px}
+.differentiator-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:34px}
+.differentiator-card{padding:23px 20px;border:1px solid rgba(111,164,220,.16);border-radius:9px;background:linear-gradient(145deg,rgba(12,35,67,.86),rgba(5,20,43,.72));min-width:0}
+.differentiator-card>span{display:inline-flex;color:var(--cyan);font:800 11px var(--display);letter-spacing:.12em;margin-bottom:23px}
+.differentiator-card h3{font:700 16px var(--display);line-height:1.35;color:#edf6ff;margin:0 0 10px}
+.differentiator-card p{font-size:12px;line-height:1.75;color:#9fb4ce;margin:0}
+.faq-section{padding-top:52px;padding-bottom:100px}
+.faq-list{max-width:900px;margin:36px auto 0;border-top:1px solid rgba(122,169,218,.2)}
+.faq-item{border-bottom:1px solid rgba(122,169,218,.2);padding:0 4px}
+.faq-item summary{position:relative;list-style:none;cursor:pointer;padding:21px 42px 21px 4px;color:#e9f4ff;font:700 15px var(--display);line-height:1.5}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";position:absolute;right:8px;top:50%;translate:0 -50%;color:var(--cyan);font-size:24px;font-weight:400}
+.faq-item[open] summary::after{content:"−"}
+.faq-item p{max-width:790px;margin:0;padding:0 36px 22px 4px;color:#a9bdd5;font-size:13px;line-height:1.85}
+.footer-nav{display:flex;flex-direction:column;gap:8px;align-items:flex-start;font-size:11px}
+.footer-nav a{color:#9eb2cc;text-decoration:none;transition:color .2s}
+.footer-nav a:hover{color:var(--cyan)}
+@media(max-width:900px){.differentiator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.differentiators-section{padding-top:20px;padding-bottom:62px}.differentiator-grid{gap:10px;margin-top:24px}.differentiator-card{padding:18px 15px}.differentiator-card>span{margin-bottom:15px}.differentiator-card h3{font-size:14px}.differentiator-card p{font-size:11px}.faq-section{padding-top:34px;padding-bottom:70px}.faq-item summary{font-size:14px;padding-top:18px;padding-bottom:18px}.footer-nav{gap:9px}}
