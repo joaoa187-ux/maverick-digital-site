@@ -118,3 +118,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offse
 .legal-updated{font-size:11px!important;color:#7893b5!important;margin-bottom:32px}
 .legal-note{margin-top:35px;padding:18px 20px;border-left:2px solid var(--cyan);background:#0a1d39;color:#c1d4e9!important}
 @media(max-width:680px){.footer-inner{grid-template-columns:1fr;gap:15px}.footer-contact{align-items:flex-start}.legal-page{padding-top:62px;padding-bottom:75px}.legal-page h2{font-size:18px}}
+
+.channel-update{margin:0 0 20px;padding:15px 16px;border:1px solid rgba(0,216,233,.22);border-radius:6px;background:rgba(8,32,61,.72)}
+.channel-update strong{display:block;color:#dff8ff;font:700 12px var(--display);margin-bottom:6px}
+.channel-update p{font-size:11px;line-height:1.7;color:#9fb6d0;margin:0 0 7px}
+.channel-update a{font-size:11px;color:#71dce9;text-decoration:underline;text-underline-offset:3px}
