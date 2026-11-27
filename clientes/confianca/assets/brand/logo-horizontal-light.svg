@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1800" height="500" viewBox="0 0 1800 500" role="img" aria-labelledby="title desc">
+<title id="title">CONFIANÇA — logo horizontal</title><desc id="desc">Símbolo à esquerda e tipografia institucional à direita.</desc>
+<svg x="35" y="35" width="430" height="335.4" viewBox="0 0 500 390" overflow="visible"><g id="simbolo-confianca" stroke-linejoin="round" stroke-linecap="round">
+  <!-- Outer gold diamond and inner contrasting diamond -->
+  <path d="M250 12 L440 195 L250 378 L60 195 Z" fill="none" stroke="#966A20" stroke-width="8"/>
+  <path d="M250 47 L401 195 L250 343 L99 195 Z" fill="none" stroke="#101114" stroke-width="4"/>
+  <!-- Fine gold rays and short corner accents from the reference -->
+  <path d="M15 164 H172 L196 170 M328 170 L352 164 H485" fill="none" stroke="#D7A742" stroke-width="3"/>
+  <path d="M57 164 H155 M345 164 H443" fill="none" stroke="#966A20" stroke-width="1.5" opacity=".8"/>
+  <path d="M92 245 L129 245 M371 245 L408 245" fill="none" stroke="#966A20" stroke-width="4"/>
+  <path d="M111 257 L130 257 M370 257 L389 257" fill="none" stroke="#D7A742" stroke-width="2"/>
+  <!-- Left sleeve and cuff -->
+  <path d="M124 183 L158 153 L206 165 L194 222 L151 215 Z" fill="#111A28" stroke="#101114" stroke-width="4"/>
+  <path d="M187 160 L214 166 L201 221 L176 213 Z" fill="#FFFFFF" stroke="#101114" stroke-width="4"/>
+  <!-- Right sleeve and cuff -->
+  <path d="M376 183 L342 153 L294 165 L306 222 L349 215 Z" fill="#111A28" stroke="#101114" stroke-width="4"/>
+  <path d="M313 160 L286 166 L299 221 L324 213 Z" fill="#FFFFFF" stroke="#101114" stroke-width="4"/>
+  <!-- Joined hands, palm and interlocking fingers -->
+  <path d="M197 171
+    C211 167 224 159 237 155
+    C246 152 255 153 264 158
+    L285 169 C294 174 304 174 313 169
+    L322 165 L341 188 L326 211
+    C319 221 310 230 301 237
+    C294 243 284 242 278 235
+    L270 228 C263 235 252 233 246 226
+    C238 233 228 229 223 221
+    C214 226 205 221 199 213
+    L185 196 Z"
+    fill="#FFFFFF" stroke="#101114" stroke-width="5"/>
+  <!-- Finger separations and hand contour, matching the white/black line art -->
+  <!-- Short finger contours keep the joined-hand silhouette clear at small sizes -->
+  <path d="M282 190 C294 197 306 205 317 214 M296 181 C308 188 320 196 331 205"
+    fill="none" stroke="#101114" stroke-width="3.5"/>
+</g></svg><text x="525" y="255" fill="#101114" font-family="Noto Serif, Georgia, serif" font-size="118" font-weight="700" letter-spacing="1">CONFIANÇA</text>
+<text x="532" y="330" fill="#966A20" font-family="Noto Serif, Georgia, serif" font-size="43" font-weight="600">Assessoria Jurídica e de Trânsito</text>
+</svg>
