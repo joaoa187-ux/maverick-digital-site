@@ -49,6 +49,16 @@
   .brand,.footer-brand-block,.hero-photo-frame,.location-photo-wrap,
   .service-card,.button,.location-map-button,.nav-links a{ -webkit-tap-highlight-color:transparent; }
 
+  .hero-photo-frame img,.location-photo-wrap>img{
+    transition:transform .42s cubic-bezier(.2,.7,.2,1),filter .42s ease;
+  }
+  .service-card{
+    transition:background .24s ease,transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s ease;
+  }
+  .service-icon,.service-icon svg{
+    transition:transform .28s ease,background .28s ease,box-shadow .28s ease;
+  }
+
   .brand.is-touch-active img,
   .footer-brand-block.is-touch-active .footer-logo{
     transform:translateY(-1px) scale(1.035);
