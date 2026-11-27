@@ -44,11 +44,37 @@
   .hero-photo-frame:hover img,.location-photo-wrap:hover>img{transform:scale(1.025);filter:saturate(.95) contrast(1.03)}
 }
 
-/* Touch feedback — no hover dependency */
+/* Touch feedback — mirrors the desktop hover response while a finger is pressed */
 @media (hover:none) and (pointer:coarse){
-  .service-card:active{transform:scale(.992)}
-  .button:active,.location-map-button:active{transform:scale(.985)}
-  .nav-links a:active{color:var(--gold-light)}
+  .brand,.footer-brand-block,.hero-photo-frame,.location-photo-wrap,
+  .service-card,.button,.location-map-button,.nav-links a{ -webkit-tap-highlight-color:transparent; }
+
+  .brand.is-touch-active img,
+  .footer-brand-block.is-touch-active .footer-logo{
+    transform:translateY(-1px) scale(1.035);
+    filter:drop-shadow(0 5px 12px rgba(215,167,66,.22));
+  }
+  .hero-photo-frame.is-touch-active img,
+  .location-photo-wrap.is-touch-active>img{
+    transform:scale(1.035);
+    filter:saturate(.98) contrast(1.03);
+  }
+  .service-card.is-touch-active{
+    transform:translateY(-3px) scale(.992);
+    box-shadow:0 12px 28px rgba(29,24,14,.13);
+  }
+  .service-card.is-touch-active .service-icon{
+    transform:translateY(-2px);
+    background:rgba(215,167,66,.09);
+    box-shadow:0 6px 18px rgba(215,167,66,.1);
+  }
+  .service-card.is-touch-active .service-icon svg{transform:scale(1.06)}
+  .button.is-touch-active,.location-map-button.is-touch-active{
+    transform:scale(.975);
+    filter:brightness(1.08);
+    box-shadow:0 7px 18px rgba(215,167,66,.2);
+  }
+  .nav-links a.is-touch-active{color:var(--gold-light)}
 }
 
 /* Scroll reveal, with a visible fallback when motion is disabled */
