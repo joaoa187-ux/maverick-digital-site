@@ -120,3 +120,87 @@ html.has-reveal .service-card[data-reveal]:nth-of-type(4){transition-delay:.18s}
   html.has-reveal [data-reveal]{opacity:1;transform:none;transition:none}
   .brand img,.footer-logo,.service-card,.service-icon,.service-icon svg,.button,.location-map-button,.hero-photo-frame img,.location-photo-wrap>img{transition:none!important}
 }
+
+
+/* Consistent navigation arrow: square frame, gold outline, gold fill on interaction */
+.arrow-frame{
+  box-sizing:border-box;
+  width:27px;
+  height:27px;
+  flex:0 0 27px;
+  display:inline-grid;
+  place-items:center;
+  padding:0;
+  margin:0;
+  border:1px solid var(--gold);
+  background:transparent;
+  color:var(--gold);
+  font-family:var(--sans);
+  font-size:14px!important;
+  font-weight:500;
+  line-height:1;
+  transition:background .22s ease,color .22s ease,border-color .22s ease,transform .22s ease;
+}
+.nav-contact .arrow-frame{margin-left:9px;color:var(--gold-light);border-color:var(--gold)}
+.service-link .arrow-frame{color:#9b742d;border-color:#c39a4c}
+.featured-service .service-link .arrow-frame{color:var(--gold-light);border-color:var(--gold)}
+.button-gold .arrow-frame{color:#17130b;border-color:rgba(23,19,11,.5)}
+.button-outline .arrow-frame{color:var(--gold-light);border-color:var(--gold)}
+.location-map-button .arrow-frame{color:#15120c;border-color:rgba(21,18,12,.48)}
+.nav-contact,.service-link,.button,.location-map-button,.text-link{
+  transition:color .22s ease,background .22s ease,border-color .22s ease,transform .22s ease,box-shadow .22s ease;
+}
+@media (hover:hover) and (pointer:fine){
+  .service-card,.service-card:hover,.featured-service:hover{
+    transform:none!important;
+    box-shadow:none!important;
+  }
+  .nav-contact:hover .arrow-frame,
+  .service-link:hover .arrow-frame,
+  .button-outline:hover .arrow-frame{
+    background:var(--gold);
+    color:#17130b;
+    border-color:var(--gold);
+    transform:translate(2px,-1px);
+  }
+  .button-gold:hover .arrow-frame,
+  .location-map-button:hover .arrow-frame{
+    background:#17130b;
+    color:var(--gold-light);
+    border-color:#17130b;
+    transform:translate(2px,-1px);
+  }
+  .nav-contact:hover{box-shadow:0 6px 18px rgba(215,167,66,.12)}
+  .button:hover,.location-map-button:hover{box-shadow:0 8px 20px rgba(215,167,66,.18)}
+  .service-link:hover .arrow-frame{transform:translate(2px,-1px)}
+}
+@media (hover:none) and (pointer:coarse){
+  .service-card,.service-card.is-touch-active,.featured-service.is-touch-active{
+    transform:none!important;
+    box-shadow:none!important;
+  }
+  .nav-contact.is-touch-active,
+  .service-link.is-touch-active,
+  .button.is-touch-active,
+  .location-map-button.is-touch-active,
+  .text-link.is-touch-active{
+    transform:scale(.985);
+  }
+  .nav-contact.is-touch-active .arrow-frame,
+  .service-link.is-touch-active .arrow-frame,
+  .button-outline.is-touch-active .arrow-frame{
+    background:var(--gold);
+    color:#17130b;
+    border-color:var(--gold);
+  }
+  .button-gold.is-touch-active .arrow-frame,
+  .location-map-button.is-touch-active .arrow-frame{
+    background:#17130b;
+    color:var(--gold-light);
+    border-color:#17130b;
+  }
+}
+.closing-watermark{opacity:.11}
+@media(prefers-reduced-motion:reduce){
+  .arrow-frame,.nav-contact,.service-link,.button,.location-map-button,.text-link{transition:none!important}
+}

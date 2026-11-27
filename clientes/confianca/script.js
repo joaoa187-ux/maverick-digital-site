@@ -20,7 +20,7 @@
   if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
     const touchTargets = [
       '.brand', '.footer-brand-block', '.hero-photo-frame', '.location-photo-wrap',
-      '.service-card', '.button', '.location-map-button', '.nav-links a'
+      '.button', '.location-map-button', '.nav-links a', '.service-link', '.text-link'
     ].join(',');
     const pressedByPointer = new Map();
     const releaseTimers = new WeakMap();
